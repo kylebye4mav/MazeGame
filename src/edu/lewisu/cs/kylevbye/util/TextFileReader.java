@@ -1,4 +1,4 @@
-package edu.lewis.cs.kylevbye.util;
+package edu.lewisu.cs.kylevbye.util;
 
 import java.util.ArrayList;
 import java.io.BufferedReader;
@@ -41,7 +41,7 @@ public class TextFileReader {
 	///	Functions
 	///
 	/**
-	 * 
+	 * Returns true if successfull
 	 */
 	public boolean readFile() {
 		

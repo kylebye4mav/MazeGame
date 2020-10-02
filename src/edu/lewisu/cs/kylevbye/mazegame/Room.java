@@ -1,4 +1,4 @@
-package edu.lewis.cs.kylevbye.mazegame;
+package edu.lewisu.cs.kylevbye.mazegame;
 
 import java.util.LinkedHashMap;
 /**
@@ -9,27 +9,37 @@ public class Room {
     ///
     /// Fields
     ///
+	private String identifier;
     private String name;
     private String description;
     private LinkedHashMap<String, Room> neighbors;
+    private Actionable action;
 
     ///
     /// Getters
     ///
+    public String getIdentifier() { return identifier; }
     public String getName() { return name; }
     public String getDescription() { return description; }
     public LinkedHashMap<String, Room> getNeighbors() { return neighbors; }
+    public Actionable getAction() { return action; }
 
     ///
     /// Setters
     ///
-    public void setName(String nameIn) { name = nameIn;}
-    public void setDescription(String descriptionIn) { description = descriptionIn; }
-    public void setNeighbors(LinkedHashMap<String, Room> neighborsIn) { neighbors = neighborsIn; }
-
+    public void setIdentifier(String identifierIn) { this.identifier = identifierIn; }
+    public void setName(String nameIn) { this.name = nameIn;}
+    public void setDescription(String descriptionIn) { this.description = descriptionIn; }
+    public void setNeighbors(LinkedHashMap<String, Room> neighborsIn) { this.neighbors = neighborsIn; }
+    public void setAction(Actionable actionIn) { this.action = actionIn; }
+    
     ///
     /// Functions
     ///
+    public void performAction() {
+    	action.performAction();
+    }
+    
     /**
      * Returns the Room that's in the provided
      * direction.
@@ -42,7 +52,7 @@ public class Room {
     }
 
     /**
-     * Sets the nighbor of the room in the provided
+     * Sets the neighbor of the room in the provided
      * direction.
      * 
      * @param   directionIn a cardinal direction
@@ -72,8 +82,8 @@ public class Room {
      * @return  string representation for neighboring rooms (tab-delimited).
      */
     public String getNeighborsAsString() {
-        return String.format( "%s\t%s\t%s\t%s", getNeighborName("N"),
-            getNeighborName("S"), getNeighborName("E"), getNeighborName("W")
+        return String.format( "{N:%s, E:%s, S:%s, W:%s}", getNeighborName("N"),
+            getNeighborName("E"), getNeighborName("S"), getNeighborName("W")
             );
     }
 
@@ -107,7 +117,7 @@ public class Room {
     @Override
     public String toString() {
         return String.format(
-            "%s\t%s\t%s", name, description, getNeighborsAsString()
+            "[%s, %s, %s]", name, description, getNeighborsAsString()
             );
     }
 
@@ -115,13 +125,20 @@ public class Room {
     /// Constructor
     ///
     public Room() {
+    	setIdentifier("");
         setName("");
         setDescription("");
         neighbors = new LinkedHashMap<String, Room>();
+        action = new Actionable() {
+        	public void performAction() {
+        		System.out.println("Null Action");
+        	}
+        };
     }
 
-    public Room(String nameIn, String descriptionIn) {
+    public Room(String identifierIn, String nameIn, String descriptionIn) {
         this();
+        setIdentifier(identifierIn);
         setName(nameIn);
         setDescription(descriptionIn);
     }

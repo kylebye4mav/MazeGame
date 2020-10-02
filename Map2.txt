@@ -1,0 +1,29 @@
+#	Rooms	
+#	Format:	$\Identifier\tRoom Name\tRoom Description
+
+$	CV1	Cave1	Nothing but darkness and ominous noise.
+$	CV2	Cave2	Lots of sounds of spiders crawling.
+$	CVE	Cave Entrance	You are at the entrance of a cave. Bright on the outside, darkness on the inside.
+$	O1	Outside1	Many trees surround the area. A cave entrance and building are nearby.
+$	O2	Outside2	Lots of rocks are around the area.	There's a cave and a building near you.
+$	BE1	Building Entrance1	Looking through the window of the door, you see a lot of rocks outside.
+$	BE2	Building Entrance2	Looking outside through a window, there's a lot of trees.
+$	B1	Building Waiting Room	The chandelier above you is flickering, but bright. You see two entrances and a path further into the building.
+$	B2	Building Intersection1	You see 3 possible ways to go. There are cobwebs everywhere!
+$	B2a	Building Trophy Hallway1	You see a bunch of shelves full of trophies. One of them reads "MVP Baseball HS 2017".
+$	B2a	Building Trophy Hallway2	You see a glass display of trophies. One of them reads "AP Scholar 2019."
+$	B3	Building Intersection2	There are 3 possible ways to go. Spiders are crawling all over the place going east of you.
+$	B3a	Building Waiting Room	There's a bunch of benches and magazines here. Why is there a waiting room in the middle of a building?
+$	B4	Building Intersection3	An intersection of 3 possible ways to go. You begin to question the building design choices made. You notice a glass ceiling above you.
+$	B4a	Building Bathroom	The bathroom is very clean compared to the rest of the building. That's good at the very least.
+$	BR	Building Bedroom	The bedroom has one bed for 1 person. It makes you question what happened to the owner. The bed is well kept clean.
+$	BC	Building Closet	The closet room is filled with suits. The owner seems to fancy dressing fancy.
+
+#	Room Map (Using pure identifier)
+*	6	6
+CV1	CV2	()	()	()	()
+CVE	O2	()	()	()	()
+O1	BE1	()	B3a	()	BC
+BE2	B1	B2	B3	B4	BR
+()	()	B2a	()	B4a	()
+()	()	B2b	()	()	()

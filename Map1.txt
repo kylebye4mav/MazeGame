@@ -1,0 +1,17 @@
+#	Rooms	
+#	Format:	$\Identifier\tRoom Name\tRoom Description
+
+$	LR1	Living Room 1	Just has a couch and a counter-top
+$	DR	Dining Room	Where people eat
+$	K	Kitchen	Where people cook
+$	E	Entrance	Where people enter
+$	E2	Entrance 2	Where people enter
+$	LR2	Living Room 2	Has T.V, etc...
+$	G	Garage	Where cars are stored
+
+#	Room Map (Using pure identifier)
+*	4	3
+LR1	DR	()
+K	E	()
+E2	LR2	()
+G	()	()
